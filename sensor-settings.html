@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Фарма</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="breadcrumb">
+				<span class="logo"><a href="#">EctoControl</a></span>
+				<span class="place">Личный кабинет</span>
+			</div>
+			<form>
+				<span class="input-wrap"><button><img src="img/search-ico.png" alt=""></button><input type="text" name="" placeholder="Поиск по imei или элементам адреса объекта"></span>
+			</form>
+			<div class="user">
+				<div class="user-det">
+					<p class="user-name">Вячеслав Трощин</p>
+					<p class="user-status">Супер-администратор</p>
+				</div>
+				<span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+			</div>
+		</div>
+	</header>
+	
+ 
+	<section class="content">
+		<div class="container">
+			<aside class="sidebar">
+				<ul class="side-list">
+					<li class="active"><a href="#">Профиль 1</a></li>
+					<li><a href="#">Профиль 2</a></li>
+					<li><a href="#">Профиль 3</a></li>
+					<li><a href="#">Профиль 4</a></li>
+					<li><a href="#">Профиль 5</a></li>
+					<li><a href="#">Профиль 6</a></li>
+				</ul>
+			</aside>
+			<div class="prime-content">
+				<div class="sensor-wrapper">
+					<p>Профили настроек термодатчиков</p>
+					<label class="chk-wrap">
+						<input type="checkbox" name="" checked>
+						<span class="chk-over"></span>
+						<span class="chk-text">По умолчанию</span>
+					</label>
+					<div class="sensor-row">
+						<div class="row-top">
+							<p class="row-head">Первый тревожный порог</p>
+							<div class="row-right">
+								<div class="notify-line">
+									<label class="chk-wrap">
+										<input type="checkbox" name="" checked>
+										<span class="chk-over"></span>
+										<span class="chk-text">Оповещать о тревоге</span>
+									</label>
+									<div class="after">
+										<span>Через</span>
+										<input type="number" name="" placeholder="0">
+										<span>мин.</span>
+										<input type="number" name="" placeholder="0">
+										<span>сек.</span>
+									</div>
+								</div>
+								<div class="notify-line">
+									<label class="chk-wrap">
+										<input type="checkbox" name="" checked>
+										<span class="chk-over"></span>
+										<span class="chk-text">Оповещать о норме</span>
+									</label>
+									<div class="after">
+										<span>Через</span>
+										<input type="number" name="" placeholder="0">
+										<span>мин.</span>
+										<input type="number" name="" placeholder="0">
+										<span>сек.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="range-row">
+							<div class="range-filter range-1st">
+								<div class="range-body">
+									<input type="text" id="warning-1" name="example_name" value="" />
+						  	    </div>
+							</div>
+						</div>
+					</div>
+					<div class="sensor-row">
+						<div class="row-top">
+							<p class="row-head">Первый тревожный порог</p>
+							<div class="row-right">
+								<div class="notify-line">
+									<label class="chk-wrap">
+										<input type="checkbox" name="" checked>
+										<span class="chk-over"></span>
+										<span class="chk-text">Оповещать о тревоге</span>
+									</label>
+									<div class="after">
+										<span>Через</span>
+										<input type="number" name="" value="0">
+										<span>мин.</span>
+										<input type="number" name="" value="0">
+										<span>сек.</span>
+									</div>
+								</div>
+								<div class="notify-line">
+									<label class="chk-wrap">
+										<input type="checkbox" name="" checked>
+										<span class="chk-over"></span>
+										<span class="chk-text">Оповещать о норме</span>
+									</label>
+									<div class="after">
+										<span>Через</span>
+										<input type="number" name="" value="0">
+										<span>мин.</span>
+										<input type="number" name="" value="0">
+										<span>сек.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="range-row">
+							<div class="range-filter range-2nd">
+								<div class="range-body">
+									<input type="text" id="warning-2" name="example_name" value="" />
+						  	    </div>
+							</div>
+						</div>
+					</div>
+					<div class="btn-wrap">
+						<button class="btn-blue">Сохранить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.matchHeight-min.js"></script>
+<script src="js/selectize.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

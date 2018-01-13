@@ -1,0 +1,49 @@
+.highcharts-background {
+  fill: #3E4464;
+}
+.highcharts-grid-line {
+  display: none;
+}
+.highcharts-graph {
+  stroke: #8C9EFF;
+}
+.highcharts-axis-labels text {
+  color: #fff !important;
+  fill: #fff !important;
+}
+.highcharts-point {
+  display: none !important;
+}
+.highcharts-point:hover {
+  display: block !important;
+}
+.highcharts-halo {
+  fill-opacity: 1;
+  fill: #fff;
+}
+.highcharts-range-selector-group {
+  width: 140px !important;
+  transform: translateX(640px);
+  /*.highcharts-button{
+		.bkg(2);
+		.bkg(3);
+		.bkg(4);
+		.bkg(5);
+		.bkg(6);
+		.bkg(7);
+		.bkg(8);
+		text{
+			width: 90px !important;
+			text-align: left;
+			display: block !important;
+		}
+	}*/
+}
+.highcharts-range-selector-group text {
+  color: #fff !important;
+  fill: #fff !important;
+}
+.highcharts-button-box {
+  fill: rgba(0, 0, 0, 0);
+  color: #fff;
+}

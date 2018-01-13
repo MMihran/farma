@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Фарма</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+	<header class="header">
+		<div class="container">
+			<div class="breadcrumb">
+				<span class="logo"><a href="#">EctoControl</a></span>
+				<span class="place">Личный кабинет</span>
+			</div>
+			<form>
+				<span class="input-wrap"><button><img src="img/search-ico.png" alt=""></button><input type="text" name="" placeholder="Поиск по imei или элементам адреса объекта"></span>
+			</form>
+			<div class="user">
+				<div class="user-det">
+					<p class="user-name">Вячеслав Трощин</p>
+					<p class="user-status">Супер-администратор</p>
+				</div>
+				<span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+			</div>
+		</div>
+	</header>
+	
+
+	<section class="content">
+		<div class="container">
+			<aside class="sidebar">
+				<ul class="companies side-list">
+					<li class="active">
+						<span class="comp-name">ТОО «Фармагрупп»</span>
+						<span class="comp-id">IMEI: 123456789012345</span>
+						<span class="comp-tel">+7 (495) 611 3544</span>
+						<span class="comp-status online">Online</span>
+					</li>
+					<li>
+						<span class="comp-name">ТОО «Фармаролл»</span>
+						<span class="comp-id">IMEI: 123456789012345</span>
+						<span class="comp-tel">+7 (495) 333 2233</span>
+						<span class="comp-status online">Online</span>
+					</li>
+					<li>
+						<span class="comp-name">ОАО «Фармарин»</span>
+						<span class="comp-id">IMEI: 123456789012345</span>
+						<span class="comp-tel">+7 (495) 999 1490</span>
+						<span class="comp-status offline">Offline</span>
+					</li>
+				</ul>
+			</aside>
+			<div class="prime-content">
+				<div class="table-wrapper">
+                    <div class="go-back">
+                        <a href="#">Вернуться к датчикам</a>
+                    </div>
+					<p class="page-header">Каб. 112 - Холодильник 1</p>
+                    <div class="graph-top">
+                        
+                    </div>
+                    <div class="graph-wrap area-graph">
+                        <p class="graph-head">Сухой склад - приёмка</p>
+                        <div id="container" style="height: 400px; width: 100%"></div>
+                    </div>
+                    <div class="about-sensor item-info">
+                        <p class="status online pull-left">На связи 3 д. 14 ч. 29 мин.</p>
+                        <p class="pull-left">
+                            <span class="condition fine">В норме</span>
+                            <span class="last-info">(5 минут назад)</span>
+                        </p>
+                        
+                        <p class="pull-right pdf-gen"><a href="#"><img src="img/pdf.png"> <span>Выгрузить в PDF</span></a></p>
+                    </div>
+					<div class="graph-wrap column-graph">
+                        <p class="graph-head">Архив тревог</p>
+                        <div id="container-2" style="height: 400px; width: 100%"></div>
+                    </div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="js/jquery.matchHeight-min.js"></script>
+<script src="js/selectize.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    var rangeSelectorOptions = {
+         buttonPosition: {
+            align: 'left',
+            verticalAlign: "top",
+        },
+         buttonTheme: {
+            paddingLeft: 10,
+            paddingRight: 10,
+            width: null
+        },
+        style: {
+            color: "#fff",
+            fontFamily: "Roboto"
+        },
+        buttons: [{
+            type: 'hour',
+            count: 1,
+            text: 'Сейчас'
+        }, {
+            type: 'hour',
+            count: 3,
+            text: '3 Часа назад'
+        }, {
+            type: 'hour',
+            count: 6,
+            text: '6 Часов назад'
+        }, {
+            type: 'day',
+            count: 1,
+            text: '1 сутки'
+        }, {
+            type: 'week',
+            count: 1,
+            text: 'неделя'
+        }, {
+            type: 'month',
+            count: 1,
+            text: 'месяц'
+        }, {
+            type: 'all',
+            text: 'Все время'
+        }],
+        inputEnabled: false, // it supports only days
+        selected: 4 // all
+    }
+
+    var langOptions = {
+        loading: 'Загрузка...',
+        months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        weekdays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+        shortMonths: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
+        exportButtonTitle: "Экспорт",
+        printButtonTitle: "Печать",
+        rangeSelectorFrom: "С",
+        rangeSelectorTo: "По",
+        rangeSelectorZoom: "",
+        downloadPNG: 'Скачать PNG',
+        downloadJPEG: 'Скачать JPEG',
+        downloadPDF: 'Скачать PDF',
+        downloadSVG: 'Скачать SVG',
+        printChart: 'Напечатать график'
+    }
+
+
+    $.getJSON('date.json', function (data) {
+    	Highcharts.setOptions({
+            lang: langOptions
+        });
+        var chart = new Highcharts.stockChart('container', {
+
+            chart: {
+                zoomType: 'x',
+            },
+
+            title: {
+            	text: null
+            },
+            subtitle: {
+            	text: null
+            },
+            xAxis: {
+                type: 'datetime',
+                // tickInterval: 850000000,
+                tickLength: 5
+            },
+            scrollbar: {
+                enabled: false
+            },
+            navigator: {
+                enabled: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return "<span>" + ((this.y*10).toFixed())/10 + '\u00B0C' + "</span>";
+                },
+                positioner: function (labelWidth, labelHeight, point) {
+                    var tooltipX, tooltipY;
+                    if (point.plotX + labelWidth > chart.plotWidth) {
+                        tooltipX = point.plotX + chart.plotLeft - labelWidth + 20;
+                    } else {
+                        tooltipX = point.plotX;
+                    }
+                    console.log(tooltipX)
+                    return { x: tooltipX, y: 60 };
+                
+                },
+                split: false,
+                shadow: false,
+                backgroundColor: 'transparent',
+                crosshairs: [false, false],
+                borderColor: 'transparent',
+                borderWidth: 0,
+                style: {
+                    color: "#fff",
+                    fontSize: '48px',
+                    fontFamily: 'Roboto',
+                    fontWeight: '100'
+                    
+                },
+            },
+            rangeSelector: rangeSelectorOptions,
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+    	                    x1: 0,
+    	                    y1: 0,
+    	                    x2: 0,
+    	                    y2: 1
+    	                },
+                        stops: [
+    	                    [1, "#393F61"],
+    	                    [0, "#4F5575"]
+    	                ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 3,
+                    states: {
+                        hover: {
+                            lineWidth: 3
+                        }
+                    },
+                    threshold: null
+                },
+            },
+            yAxis: {
+            	min: -40,
+            	max: 40,
+            	title: {
+            		text: null
+            	},
+                opposite: false,
+                labels: {
+                    style: {
+                        fontSize: "16px",
+                        fontFamily: 'Roboto',
+                    }
+                }
+            },
+            series: [{
+                type: 'area',
+                // name: 'USD to EUR',
+                data: data
+
+            }]
+        });
+
+
+        var t = setInterval(function(){
+             if ($(".area-graph .highcharts-container").hasClass("highcharts-container") &&  $(".area-graph .highcharts-axis-labels.highcharts-yaxis-labels text:last-child").attr("x") ==0) {
+                 clearInterval(t);
+                 var yTopNum = $(".area-graph .highcharts-axis-labels.highcharts-yaxis-labels text:last-child");
+                 yTopNum.attr("x", yTopNum.prev().attr("x")).attr("y", "43");
+            }
+        }, 1000);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-v.json&callback=?', function (data) {
+
+        // create the chart
+        Highcharts.stockChart('container-2', {
+            
+            chart: {
+                zoomType: 'x',
+            },
+
+            title: {
+                text: null
+            },
+            subtitle: {
+                text: null
+            },
+            xAxis: {
+                type: 'datetime',
+                // tickInterval: 850000000,
+                // tickLength: 5
+            },
+            rangeSelector: rangeSelectorOptions,
+
+
+            scrollbar: {
+                enabled: false
+            },
+            navigator: {
+                enabled: false
+            },
+            legend: {
+                enabled: false
+            },
+
+            yAxis: {
+                min: 0,
+                allowDecimals: false,
+                title: {
+                    text: null
+                },
+                opposite: false,
+                labels: {
+                    style: {
+                        fontSize: "16px",
+                        fontFamily: 'Roboto',
+                    }
+                }
+            },
+
+             plotOptions: {
+                
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            },
+
+
+            tooltip: {
+                formatter: function() {
+                    return "<span>" + ((this.y*10).toFixed())/10 + "</span>";
+                },
+                // positioner: function (labelWidth, labelHeight, point) {
+                //     var tooltipX, tooltipY;
+                //     if (point.plotX + labelWidth > chart.plotWidth) {
+                //         tooltipX = point.plotX + chart.plotLeft - labelWidth + 20;
+                //     } else {
+                //         tooltipX = point.plotX;
+                //     }
+                //     console.log(tooltipX)
+                //     return { x: tooltipX, y: 60 };
+                
+                // },
+                split: false,
+                shadow: false,
+                backgroundColor: 'transparent',
+                crosshairs: [false, false],
+                borderColor: 'transparent',
+                borderWidth: 0,
+                style: {
+                    color: "#fff",
+                    fontSize: '24px',
+                    fontFamily: 'Roboto',
+                    fontWeight: '500'
+                    
+                },
+            },
+
+            series: [{
+                type: 'column',
+                name: 'AAPL Stock Volume',
+                data: [
+                    [1294012800000,0],
+                    [1294099200000,0],
+                    [1294185600000,5],
+                    [1294272000000,0],
+                    [1294358400000,15],
+                    [1294617600000,10],
+                    [1294704000000,0],
+                    [1294790400000,0],
+                    [1294876800000,0],
+                    [1294963200000,17],
+                    [1295308800000,0],
+                    [1295395200000,3],
+                    [1295481600000,0],
+                    [1295568000000,0],
+                    [1295827200000,0],
+                    [1295913600000,4],
+                    [1296000000000,5],
+                    [1296086400000,0],
+                    [1296172800000,10],
+                    [1296432000000,0],
+                ]
+                // dataGrouping: {
+                //     units: [[
+                //         'week', // unit name
+                //         [1] // allowed multiples
+                //     ], [
+                //         'month',
+                //         [1, 2, 3, 4, 5, 6, 7]
+                //     ]]
+                // }
+            }]
+        });
+    });
+</script>
+</body>
+</html>

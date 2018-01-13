@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Фарма</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="breadcrumb">
+				<span class="logo"><a href="#">EctoControl</a></span>
+				<span class="place">Личный кабинет</span>
+			</div>
+			<form>
+				<span class="input-wrap"><button><img src="img/search-ico.png" alt=""></button><input type="text" name="" placeholder="Поиск по imei или элементам адреса объекта"></span>
+			</form>
+			<div class="user">
+				<div class="user-det">
+					<p class="user-name">Вячеслав Трощин</p>
+					<p class="user-status">Супер-администратор</p>
+				</div>
+				<span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+			</div>
+		</div>
+	</header>
+	
+ 
+	<section class="content narrow-page">
+		<div class="container">
+			<aside class="sidebar">
+				<ul class="companies side-list">
+					<li class="active">
+						<span class="comp-name">ТОО «Фармагрупп»</span>
+						<span class="comp-id">IMEI: 123456789012345</span>
+						<span class="comp-tel">+7 (495) 611 3544</span>
+						<span class="comp-status online">Online</span>
+					</li>
+					<li>
+						<span class="comp-name">ТОО «Фармаролл»</span>
+						<span class="comp-id">IMEI: 123456789012345</span>
+						<span class="comp-tel">+7 (495) 333 2233</span>
+						<span class="comp-status online">Online</span>
+					</li>
+					<li>
+						<span class="comp-name">ОАО «Фармарин»</span>
+						<span class="comp-id">IMEI: 123456789012345</span>
+						<span class="comp-tel">+7 (495) 999 1490</span>
+						<span class="comp-status offline">Offline</span>
+					</li>
+				</ul>
+			</aside>
+			<div class="prime-content">
+				<form class="prime-form">
+					<p class="add-obj-p">Добавление пользователя</p>
+					<label>
+						<p>Имя</p>
+						<input type="text" name="">
+					</label>
+					<label>
+						<p>Фамилия</p>
+						<input type="text" name="">
+					</label>
+					<label>
+						<p>Электронная почта</p>
+						<input type="text" name="">
+					</label>
+					<label>
+						<p>Пароль</p>
+						<input type="text" name="">
+					</label>
+					<label>
+						<p>Повторите пароль</p>
+						<input type="text" name="">
+					</label>
+					<label>
+						<p>Права</p>
+						<select>
+							<option>Супервизор</option>
+							<option>Админ</option>
+							<option>Супер-админ</option>
+						</select>
+					</label>
+					<button class="submit" type="submit">Добавить пользователя</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+	
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.matchHeight-min.js"></script>
+<script src="js/selectize.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

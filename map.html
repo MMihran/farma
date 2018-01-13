@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Фарма</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="breadcrumb">
+				<span class="logo"><a href="#">EctoControl</a></span>
+				<span class="place">Личный кабинет</span>
+			</div>
+			<form>
+				<span class="input-wrap"><button><img src="img/search-ico.png" alt=""></button><input type="text" name="" placeholder="Поиск по imei или элементам адреса объекта"></span>
+			</form>
+			<div class="user">
+				<div class="user-det">
+					<p class="user-name">Вячеслав Трощин</p>
+					<p class="user-status">Супер-администратор</p>
+				</div>
+				<span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+			</div>
+		</div>
+	</header>
+	
+ 
+	<section class="content">
+		<div class="container">
+			<aside class="sidebar">
+				<ul class="side-list">
+					<li class="active"><a href="#">Объект 1</a></li>
+					<li><a href="#">Объект 2</a></li>
+					<li><a href="#">Объект 3</a></li>
+					<li><a href="#">Объект 4</a></li>
+					<li><a href="#">Объект 5</a></li>
+					<li><a href="#">Объект 6</a></li>
+				</ul>
+			</aside>
+			<div class="prime-content">
+				<div class="map-wrapper">
+					<p>Карта объектов</p>
+					<div id="map"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.matchHeight-min.js"></script>
+<script src="js/selectize.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/script.js"></script>
+
+
+<script type="text/javascript">
+	ymaps.ready(init);
+    var myMap;
+
+    function init(){     
+        myMap = new ymaps.Map ("map", {
+            center: [55.75399399999374,37.62209300000001],
+            zoom: 12,
+            controls: []
+        });
+        var myPlacemark = new ymaps.Placemark([55.75399399999374,37.62209300000001], {
+            iconCaption: 'Москва'
+        }, {
+            preset: 'islands#redDotIconWithCaption'
+            // iconColor: '#ff3333'
+            // iconImageSize: [29,46],
+            // iconImageOffset: [-15, -46]
+        });
+        myMap.geoObjects.add(myPlacemark);
+        var coords = [
+			[55.7673512278679,37.56029490429688],
+			[55.729396944225314,37.5884473701172],
+			[55.73055936028887,37.66569498974609],
+			[55.7462485754695,37.678054608886725],
+			[55.75767253565383,37.69041422802735]
+        ]
+        var placemarkArr= [];
+        for (var i = 0; i < coords.length; i++) {
+        	placemarkArr[i] = new ymaps.Placemark(coords[i], {
+        		balloonContentHeader: "ТОО «Фармагрупп»",
+	            balloonContentBody: "IMEI: г. Москва, пер. Большой 78",
+	            balloonContentFooter: "Систем на связи: 2/2"
+        	}, {
+        		preset: 'islands#redDotIconWithCaption'
+        	});
+        	myMap.geoObjects.add(placemarkArr[i]);
+        }
+    }
+</script>
+</body>
+</html>
