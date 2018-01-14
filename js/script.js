@@ -75,6 +75,34 @@ $(document).ready(function(){
 	// 		$(".highcharts-button").fadeIn();
 	// 	}
 	// }, 1000);
-	
 
+
+
+	//---------------SCROLL-BOXES!!------------------
+	$(".side-list").customScrollbar({
+		onCustomScroll: function(){
+			$(".side-list .vertical .thumb").addClass("visible");
+		},
+		fixedThumbHeight: 150,
+		animationSpeed: 1000
+	});
+	if($(".sensors-table-wrap").hasClass("sensors-table-wrap")){
+		$(".sensors-table-wrap").customScrollbar({
+			fixedThumbHeight: 150,
+			animationSpeed: 1000
+		});
+	}
+
+	//----------------VALIDATE!!---------------
+	try{
+		$(".prime-form label input").attr("minlength", 3);
+		$(".prime-form").validate();
+		$(".prime-form label input").keyup(function () {
+		    if ($(this).valid() == false ) {
+		        $(this).addClass("input-not-valid");
+		    }else{
+		    	$(this).removeClass("input-not-valid");
+		    }
+		});
+	}catch(e){}
 });
