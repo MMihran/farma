@@ -46,11 +46,17 @@
                     <li>Сухой склад - приёмка</li>
                 </ul>
 				<div class="sensor-wrapper">
-					<label class="chk-wrap">
-						<input type="checkbox" name="" checked>
-						<span class="chk-over"></span>
-						<span class="chk-text">По умолчанию</span>
-					</label>
+					<div class="search-row sensor-top">
+						<label>
+							<span class="name-label">Имя профиля: </span>
+							<input type="text" name="" placeholder="Введите имя...">
+						</label>
+						<label class="chk-wrap">
+							<input type="checkbox" name="" checked>
+							<span class="chk-over"></span>
+							<span class="chk-text">По умолчанию</span>
+						</label>
+					</div>
 					<div class="sensor-row">
 						<div class="row-top">
 							<p class="row-head">Первый тревожный порог</p>
@@ -138,6 +144,11 @@
 					<div class="btn-wrap">
 						<button class="btn-blue">Применить</button>
 						<button class="btn-back">Назад</button>
+					</div>
+
+					<div class="btn-wrap add-delete">
+						<button class="btn-blue">Добавить</button>
+						<button class="btn-back">Удалить</button>
 					</div>
 				</div>
 			</div>

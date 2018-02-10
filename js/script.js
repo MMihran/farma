@@ -2,7 +2,14 @@ $(document).ready(function(){
     $(".sidebar, .prime-content").matchHeight();
 
     if($("select").length){
-    	$("select").selectize();
+    	var initHandler = function(name) {
+    		$(".selectize-input input").prop('disabled', true);
+    	};
+    	$("select").selectize({
+    		maxItems: 1,
+    		onInitialize: initHandler("onInitialize")
+    	});
+		// selectize.on('initialize', initHandler);
     }
 
 
@@ -43,10 +50,6 @@ $(document).ready(function(){
 		var table = $(this).closest(".settings-table");
 		var checkbox = table.find("td.checkbox-row input[type=checkbox]");
 		var checked = table.find("td.checkbox-row input[type=checkbox]:checked");
-		console.log(checkbox)
-		console.log(checkbox.length)
-		console.log(checked)
-		console.log(checked.length)
 		if(checkbox.length == checked.length){
 			checkbox.prop("checked", false);
 			$(this).prop("checked", false);
@@ -95,9 +98,9 @@ $(document).ready(function(){
 
 	//----------------VALIDATE!!---------------
 	try{
-		$(".prime-form label input").attr("minlength", 3);
+		$(".prime-form label input").not(".selectize-input input").attr("minlength", 3);
 		$(".prime-form").validate();
-		$(".prime-form label input").keyup(function () {
+		$(".prime-form label input").not(".selectize-input input").keyup(function () {
 		    if ($(this).valid() == false ) {
 		        $(this).addClass("input-not-valid");
 		    }else{
@@ -105,4 +108,25 @@ $(document).ready(function(){
 		    }
 		});
 	}catch(e){}
+
+
+
+
+
+	// FIX SCROLLABLE TABLE HEAD
+	var tableHead = $(".sensors-table-wrap .head").clone();
+	tableHead.find("th").each(function(index){
+		console.log(index);
+		console.log($(".sensors-table-wrap .head th"));
+		$(this).width($(".sensors-table-wrap .head").children().eq(index).width());
+	});
+	var tableClone = $("<table class='fixed-head'></table>");
+	tableClone.append(tableHead);
+	$(".sensors-table-wrap.scrollable .viewport").append(tableClone);
+	
+
+	$('.fixed-head .checkbox-row input[type=checkbox]').change(function () {
+	   	$(".settings-table th.checkbox-row input[type=checkbox]").trigger("change");
+	   	$(this).prop("checked", $(".settings-table th.checkbox-row input[type=checkbox]").prop("checked"));
+	});
 });

@@ -1170,6 +1170,22 @@ h2 {
 .selectize-input input {
   display: none;
 }
+.search-row {
+  margin-top: 15px;
+}
+.search-row input[type=text] {
+  width: 315px;
+  height: 40px;
+  font-family: "Roboto";
+  border: none;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  padding: 0 20px;
+  background-color: #fff;
+  margin-right: 40px;
+  font-weight: normal;
+  color: #000;
+}
 .table-wrapper .table-head {
   font-weight: 500;
   margin-bottom: 10px;
@@ -1190,7 +1206,7 @@ h2 {
 .table-wrapper table {
   background-color: #fff;
   width: 100%;
-  max-width: 975px;
+  max-width: 980px;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
@@ -1222,8 +1238,14 @@ h2 {
 .table-wrapper table .state {
   width: 75px;
 }
+.table-wrapper table .img-row-1 {
+  min-width: 175px;
+}
 .table-wrapper table .img-row-1 .img-btn {
   margin-right: 33px;
+}
+.table-wrapper table .img-row-2 {
+  min-width: 105px;
 }
 .table-wrapper table .img-row-2 .img-btn {
   margin-right: 24px;
@@ -1247,6 +1269,9 @@ h2 {
 .table-wrapper table.settings-table td,
 .table-wrapper table.settings-table th {
   padding-left: 10px;
+}
+.users-btns.btn-wrap {
+  margin-top: 20px;
 }
 .settings-form {
   width: 725px;
@@ -1548,19 +1573,19 @@ h2 {
 .sensor-wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-.sensor-wrapper input::-webkit-input-placeholder {
+.sensor-wrapper .sensor-row input::-webkit-input-placeholder {
   color: #5185f2;
   font-weight: 500;
 }
-.sensor-wrapper input:-moz-placeholder {
+.sensor-wrapper .sensor-row input:-moz-placeholder {
   color: #5185f2;
   font-weight: 500;
 }
-.sensor-wrapper input::-moz-placeholder {
+.sensor-wrapper .sensor-row input::-moz-placeholder {
   color: #5185f2;
   font-weight: 500;
 }
-.sensor-wrapper input:-ms-input-placeholder {
+.sensor-wrapper .sensor-row input:-ms-input-placeholder {
   color: #5185f2;
   font-weight: 500;
 }
@@ -1577,6 +1602,35 @@ h2 {
 }
 .sensor-wrapper .btn-back {
   box-shadow: 0 15px 25px 3px rgba(0, 0, 0, 0.1);
+}
+.sensor-wrapper .change-profile.prime-form {
+  text-align: right;
+}
+.sensor-wrapper .change-profile.prime-form .btn-blue {
+  margin-left: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  vertical-align: top;
+  margin-right: 0;
+}
+.sensor-wrapper .change-profile.prime-form .select-profile {
+  text-align: left;
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+.sensor-wrapper .btn-wrap.add-delete {
+  position: absolute;
+  top: 35px;
+  right: 0;
+}
+.sensor-wrapper .sensor-top {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.sensor-wrapper .sensor-top span.name-label {
+  display: inline-block;
+  font-weight: 500;
+  margin-right: 20px;
 }
 .sensor-row {
   width: 100%;
@@ -1807,17 +1861,65 @@ h2 {
   height: 285px;
   line-height: 285px;
 }
+.graph-top .dashboard-item input.item-top {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  display: block;
+  color: #000;
+  border-radius: 6px;
+  width: 100%;
+}
 .graph-top .sensors-table-wrap {
   width: 100%;
   max-height: 475px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
   border-radius: 5px;
+  overflow: hidden;
+}
+.graph-top .sensors-table-wrap .viewport {
+  border-radius: 6px;
+}
+.graph-top .sensors-table-wrap .overview {
+  padding-top: 40px;
+}
+.graph-top .sensors-table-wrap .settings-table {
+  margin-top: -40px;
 }
 .graph-top .sensors-table-wrap table {
   box-shadow: none;
   max-width: 980px;
   margin-bottom: 0;
+}
+.graph-top .sensors-table-wrap table .head {
+  height: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+}
+.graph-top .sensors-table-wrap .fixed-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 40px;
+  overflow: hidden;
+  font-size: 0;
+  display: block;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.graph-top .sensors-table-wrap .fixed-head .head {
+  visibility: visible;
+}
+.graph-top .sensors-table-wrap .fixed-head .head th {
+  font-size: 14px;
+  box-sizing: content-box;
+  padding-left: 10px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
 }
 .change-profile {
   line-height: 40px;
@@ -1856,6 +1958,12 @@ h2 {
 }
 .change-profile .select-wrap label {
   margin: 0;
+}
+.change-profile .select-wrap .btn-blue {
+  display: inline-block;
+  margin-left: 35px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 }
 .change-profile .sensor-select {
   width: 320px;

@@ -63,7 +63,7 @@
                     <div class="graph-top">
                         <div class="left-bar">
                             <div class="dashboard-item item-fine">
-                                <a href="#" class="item-top">Сухой склад - приёмка</a>
+                                <input type="text" class="item-top" placeholder="Введите имя датчика">
                                 <div class="item-info">
                                     <p class="status online">На связи 3 д. 14 ч. 29 мин.</p>
                                     <p class="temperature">23,1 <b>&deg;C</b></p>
@@ -77,11 +77,6 @@
                         </div>
                         <div class="sensor-wrapper">
                             <div class="change-profile prime-form fix-height">
-                                <label class="chk-wrap">
-                                    <input type="checkbox" name="" checked>
-                                    <span class="chk-over"></span>
-                                    <span class="chk-text">Применить профиль настроек</span>
-                                </label>
                                 <label class="select-profile">
                                     <select>
                                         <option>Профиль 1</option>
@@ -93,6 +88,7 @@
                                         
                                     </select>
                                 </label>
+                                <button class="btn-blue">Применить профиль</button>
                             </div>
                             <div class="sensor-row">
                                 <div class="row-top">
@@ -200,7 +196,6 @@
 <script src="https://code.highcharts.com/stock/highstock.js"></script>
 <script src="js/jquery.matchHeight-min.js"></script>
 <script src="js/selectize.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/ion.rangeSlider.min.js"></script>
 <script src="js/script.js"></script>
