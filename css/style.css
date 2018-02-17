@@ -595,6 +595,9 @@ table {
 .column-graph .highcharts-point {
   fill: #ff5252;
 }
+.highcharts-input-group {
+  display: none !important;
+}
 body {
   background-color: #edf0f6;
   height: 100vh;
@@ -1463,6 +1466,9 @@ h2 {
 .dashboard-wrapper .btns {
   margin-bottom: 26px;
 }
+.dashboard-wrapper .btns .pull-right {
+  margin-right: 0;
+}
 .dashboard-wrapper .items-wrap {
   margin-left: -10px;
   margin-right: -10px;
@@ -1472,6 +1478,39 @@ h2 {
   content: "";
   clear: both;
   width: 100%;
+}
+.dashboard-head.row-head span:after {
+  content: ", ";
+}
+.dashboard-head.row-head .system-id {
+  color: #5973ff;
+  font-weight: bold;
+}
+.dashboard-head.row-head .system-condition:after {
+  content: "";
+}
+.dashboard-head.row-head .system-condition:before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 5px;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-top: 5px;
+  vertical-align: top;
+}
+.dashboard-head.row-head .system-condition.online {
+  color: #81c784;
+}
+.dashboard-head.row-head .system-condition.online:before {
+  background-color: #81c784;
+}
+.dashboard-head.row-head .system-condition.offline {
+  color: #f44336;
+}
+.dashboard-head.row-head .system-condition.offline:before {
+  background-color: #f44336;
 }
 .dashboard-row {
   padding-bottom: 10px;
@@ -1564,6 +1603,15 @@ h2 {
 }
 .dashboard-item.item-alert-2 .item-info .last-info {
   color: #f44336;
+}
+.dashboard-item.item-disabled .item-top {
+  background-color: #bbb;
+}
+.dashboard-item.item-disabled .item-info {
+  color: #bbb;
+}
+.dashboard-item.item-disabled .item-info .last-info {
+  color: #bbb;
 }
 /*======SENSOR_PAGE======*/
 .sensor-wrapper input[type='number'] {
@@ -1825,6 +1873,12 @@ h2 {
 #map .ymaps-2-1-55-balloon__tail,
 #map .ymaps-2-1-55-balloon__tail:after {
   background: #edf0f6;
+}
+.map-btn {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  margin-right: 0 !important;
 }
 .graph-wrap {
   width: 100%;
@@ -2118,17 +2172,46 @@ h2 {
   float: left;
 }
 .sensors-graph .graph-select {
-  width: 280px;
+  width: 230px;
   height: 400px;
   background-color: #3E4464;
   float: left;
   color: #fff;
-  padding-top: 35px;
+  padding-top: 20px;
   font-size: 12px;
   padding-left: 20px;
 }
 .sensors-graph .graph-select .head {
   margin-bottom: 25px;
+}
+.sensors-graph .graph-select .checkbox-row + .checkbox-row {
+  margin-top: 7px;
+}
+.sensors-graph .graph-select .checkbox-row,
+.sensors-graph .graph-select .selectize-control,
+.sensors-graph .graph-select .selectize-input,
+.sensors-graph .graph-select .selectize-dropdown {
+  width: 190px;
+}
+.sensors-graph .graph-select .selectize-input {
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+}
+.sensors-graph .graph-select .dropdown-up.selectize-dropdown {
+  bottom: 30px;
+  top: auto !important;
+}
+.sensors-graph .graph-select .selectize-dropdown .option {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.sensors-graph .graph-select .selectize-dropdown-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 200px;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 .sensors-graph .selectize-input {
   background-color: #8c9eff;
@@ -2136,7 +2219,7 @@ h2 {
   width: 170px;
 }
 .sensors-graph .selectize-input:after {
-  content: url("../img/select-white.png");
+  content: url("../img/select-black.png");
 }
 .sensors-graph .selectize-dropdown {
   line-height: 25px;
@@ -2151,6 +2234,36 @@ h2 {
   line-height: 40px;
   color: #fff;
   font-size: 12px;
+}
+.sensors-graph .checkbox-row.row-1 .selectize-input {
+  background-color: #FEFF99;
+}
+.sensors-graph .checkbox-row.row-2 .selectize-input {
+  background-color: #FFCC00;
+}
+.sensors-graph .checkbox-row.row-3 .selectize-input {
+  background-color: #FE0000;
+}
+.sensors-graph .checkbox-row.row-4 .selectize-input {
+  background-color: #FF00FE;
+}
+.sensors-graph .checkbox-row.row-5 .selectize-input {
+  background-color: #00FFFF;
+}
+.sensors-graph .checkbox-row.row-6 .selectize-input {
+  background-color: #CDFFCC;
+}
+.sensors-graph .checkbox-row.row-7 .selectize-input {
+  background-color: #00FF01;
+}
+.sensors-graph .checkbox-row.row-8 .selectize-input {
+  background-color: #7F8000;
+}
+.sensors-graph .checkbox-row.row-9 .selectize-input {
+  background-color: #969696;
+}
+.sensors-graph .checkbox-row.row-10 .selectize-input {
+  background-color: #800000;
 }
 .about-sensor {
   padding-top: 0!important;

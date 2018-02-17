@@ -109,36 +109,45 @@
             color: "#fff",
             fontFamily: "Roboto"
         },
-        buttons: [{
+        buttons: [ {
+            type: 'minute',
+            count: 30,
+            text: 'За последние'
+        },  {
             type: 'hour',
             count: 1,
-            text: 'Сейчас'
-        }, {
+            text: '1 ч.'
+        },  {
             type: 'hour',
             count: 3,
-            text: '3 Часа назад'
-        }, {
+            text: '3 ч.'
+        },  {
             type: 'hour',
             count: 6,
-            text: '6 Часов назад'
-        }, {
+            text: '6 ч.'
+        },  {
             type: 'day',
             count: 1,
-            text: '1 сутки'
-        }, {
+            text: '1 сут.'
+        },  {
+            type: 'day',
+            count: 3,
+            text: '3 сут.'
+        },  {
             type: 'week',
             count: 1,
-            text: 'неделя'
-        }, {
+            text: '1 нед.'
+        },  {
             type: 'month',
             count: 1,
-            text: 'месяц'
+            text: '1 мес.'
         }, {
-            type: 'all',
-            text: 'Все время'
+            type: 'year',
+            count: 1,
+            text: '1 год'
         }],
-        inputEnabled: false, // it supports only days
-        selected: 4 // all
+        inputEnabled: true, // it supports only days
+        selected: 0 // all
     }
 
     var langOptions = {
