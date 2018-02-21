@@ -595,7 +595,8 @@ table {
 .column-graph .highcharts-point {
   fill: #ff5252;
 }
-.highcharts-input-group {
+.highcharts-input-group,
+.highcharts-range-selector-group {
   display: none !important;
 }
 body {
@@ -634,6 +635,18 @@ h2 {
 }
 .pull-right {
   float: right !important;
+}
+.multiselect .selectize-input .item {
+  display: inline-block;
+}
+.multiselect .selectize-input .item + .item:before {
+  content: ", ";
+}
+.multiselect .selectize-input input {
+  padding: 0;
+  width: 100% !important;
+  box-shadow: none;
+  display: block !important;
 }
 .h2-top {
   font-size: 25px;
@@ -1212,6 +1225,10 @@ h2 {
   max-width: 980px;
   border-radius: 6px;
   overflow: hidden;
+}
+.table-wrapper table:not(.table-head) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
 .table-wrapper table .head {
@@ -1259,8 +1276,8 @@ h2 {
 .table-wrapper table tr + tr td {
   border-top: 1px solid #edf0f6;
 }
-.table-wrapper table tr + tr td + td {
-  border-left: 1px solid #edf0f6;
+.table-wrapper table tr td + td {
+  border-left: 1px solid  #edf0f6;
 }
 .table-wrapper table:after {
   content: "";
@@ -1885,6 +1902,7 @@ h2 {
   margin-bottom: 20px;
   border-radius: 5px;
   overflow: hidden;
+  position: relative;
 }
 .graph-wrap .graph-head {
   font-size: 14px;
@@ -1893,6 +1911,105 @@ h2 {
   padding-left: 12px;
   line-height: 32px;
   background-color: #8c9eff;
+}
+/*=====TABLE STYLES======*/
+.settings-table td:nth-child(1),
+.settings-table th:nth-child(1) {
+  width: 220px;
+}
+.settings-table td:nth-child(2),
+.settings-table th:nth-child(2) {
+  width: 140px;
+}
+.settings-table td:nth-child(3),
+.settings-table th:nth-child(3) {
+  width: 140px;
+}
+.settings-table td:nth-child(4),
+.settings-table th:nth-child(4) {
+  width: 90px;
+}
+.settings-table td:nth-child(5),
+.settings-table th:nth-child(5) {
+  width: 110px;
+}
+.settings-table td:nth-child(6),
+.settings-table th:nth-child(6) {
+  width: 140px;
+}
+.settings-table td:nth-child(7),
+.settings-table th:nth-child(7) {
+  width: 140px;
+}
+.users-table td:nth-child(1),
+.users-table th:nth-child(1) {
+  width: 160px;
+}
+.users-table td:nth-child(2),
+.users-table th:nth-child(2) {
+  width: 220px;
+}
+.users-table td:nth-child(3),
+.users-table th:nth-child(3) {
+  width: 200px;
+}
+.users-table td:nth-child(4),
+.users-table th:nth-child(4) {
+  width: 240px;
+}
+.users-table td:nth-child(5),
+.users-table th:nth-child(5) {
+  width: 160px;
+}
+.user-settings-table td:nth-child(1),
+.user-settings-table th:nth-child(1) {
+  width: 155px;
+}
+.user-settings-table td:nth-child(2),
+.user-settings-table th:nth-child(2) {
+  width: 145px;
+}
+.user-settings-table td:nth-child(3),
+.user-settings-table th:nth-child(3) {
+  width: 90px;
+}
+.user-settings-table td:nth-child(4),
+.user-settings-table th:nth-child(4) {
+  width: 70px;
+}
+.user-settings-table td:nth-child(5),
+.user-settings-table th:nth-child(5) {
+  width: 110px;
+}
+.user-settings-table td:nth-child(6),
+.user-settings-table th:nth-child(6) {
+  width: 110px;
+}
+.user-settings-table td:nth-child(7),
+.user-settings-table th:nth-child(7) {
+  width: 90px;
+}
+.user-settings-table td:nth-child(8),
+.user-settings-table th:nth-child(8) {
+  width: 110px;
+}
+.user-settings-table td:nth-child(9),
+.user-settings-table th:nth-child(9) {
+  width: 100px;
+}
+.user-settings-table td {
+  padding-left: 10px !important;
+}
+.user-settings-table th {
+  padding-left: 5px !important;
+}
+.table-head {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-bottom: 0 !important;
+}
+.table-head:after {
+  display: none !important;
 }
 .graph-top .sensor-wrapper {
   width: 735px;
@@ -1929,28 +2046,22 @@ h2 {
   max-height: 475px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   overflow: hidden;
 }
 .graph-top .sensors-table-wrap .viewport {
-  border-radius: 6px;
-}
-.graph-top .sensors-table-wrap .overview {
-  padding-top: 40px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .graph-top .sensors-table-wrap .settings-table {
-  margin-top: -40px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .graph-top .sensors-table-wrap table {
   box-shadow: none;
   max-width: 980px;
   margin-bottom: 0;
-}
-.graph-top .sensors-table-wrap table .head {
-  height: 0;
-  visibility: hidden;
-  top: 0;
-  left: 0;
 }
 .graph-top .sensors-table-wrap .fixed-head {
   position: absolute;
@@ -2165,15 +2276,52 @@ h2 {
   margin: auto;
   background-color: #2196f3;
 }
+.date-pick {
+  height: 50px;
+  padding-left: 15px;
+}
+.date-pick li {
+  float: left;
+}
+.date-pick li + li {
+  margin-left: 5px;
+}
+.date-pick li.active button {
+  font-weight: 500;
+  color: #999;
+}
+.date-pick li button {
+  background: none;
+  border: none;
+  color: #fff;
+  line-height: 50px;
+}
+.date-pick span {
+  line-height: 50px;
+  display: block;
+  float: left;
+  margin: 0 25px;
+  font-size: 13px;
+  color: #ccc;
+}
+.date-pick .calendar input {
+  float: left;
+  line-height: 50px;
+  background: none;
+  border: none;
+  color: #fff;
+}
 .sensors-graph {
   overflow: hidden;
 }
-.sensors-graph #container {
+.sensors-graph .graph-left {
+  height: 450px;
   float: left;
+  background-color: #3e4464;
 }
 .sensors-graph .graph-select {
   width: 230px;
-  height: 400px;
+  height: 450px;
   background-color: #3E4464;
   float: left;
   color: #fff;
@@ -2185,7 +2333,7 @@ h2 {
   margin-bottom: 25px;
 }
 .sensors-graph .graph-select .checkbox-row + .checkbox-row {
-  margin-top: 7px;
+  margin-top: 12px;
 }
 .sensors-graph .graph-select .checkbox-row,
 .sensors-graph .graph-select .selectize-control,
@@ -2235,6 +2383,26 @@ h2 {
   color: #fff;
   font-size: 12px;
 }
+.sensors-graph .selectize-input input {
+  padding: 0;
+  width: 100% !important;
+  box-shadow: none;
+  display: block !important;
+  background: none;
+  height: 30px;
+}
+.sensors-graph .selectize-input input::-webkit-input-placeholder {
+  color: #333;
+}
+.sensors-graph .selectize-input input:-moz-placeholder {
+  color: #333;
+}
+.sensors-graph .selectize-input input::-moz-placeholder {
+  color: #333;
+}
+.sensors-graph .selectize-input input:-ms-input-placeholder {
+  color: #333;
+}
 .sensors-graph .checkbox-row.row-1 .selectize-input {
   background-color: #FEFF99;
 }
@@ -2264,6 +2432,63 @@ h2 {
 }
 .sensors-graph .checkbox-row.row-10 .selectize-input {
   background-color: #800000;
+}
+.daterangepicker {
+  display: none;
+}
+.daterangepicker .table-condensed td,
+.daterangepicker .table-condensed th {
+  padding: 5px;
+}
+.daterangepicker .glyphicon-calendar,
+.daterangepicker .glyphicon-chevron-left,
+.daterangepicker .glyphicon-chevron-right {
+  content: "";
+  display: inline-block;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.daterangepicker .glyphicon-calendar {
+  background-image: url("../img/glyphicon-calendar.png");
+  width: 13px;
+  height: 14px;
+}
+.daterangepicker .glyphicon-chevron-left {
+  background-image: url("../img/chevron-left.png");
+  width: 8px;
+  height: 15px;
+}
+.daterangepicker .glyphicon-chevron-right {
+  background-image: url("../img/chevron-right.png");
+  width: 8px;
+  height: 15px;
+}
+.daterangepicker .range_inputs button {
+  border: 1px solid  #ccc;
+  border-radius: 2px;
+  padding: 5px;
+}
+.daterangepicker .range_inputs .applyBtn {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  color: #fff;
+}
+.daterangepicker .range_inputs .applyBtn:hover {
+  background-color: #449d44;
+}
+.daterangepicker .range_inputs .applyBtn:active {
+  background-color: #357935;
+}
+.daterangepicker .range_inputs .cancelBtn {
+  background-color: #fff;
+  color: #000;
+}
+.daterangepicker .range_inputs .cancelBtn:hover {
+  background-color: #e5e5e5;
+}
+.daterangepicker .range_inputs .cancelBtn:active {
+  background-color: #cbcbcb;
 }
 .about-sensor {
   padding-top: 0!important;

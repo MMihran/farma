@@ -4,6 +4,12 @@
 	<meta charset="utf-8">
 	<title>Фарма</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+    <!-- DATERANGEPICKER STYLES -->
+    <!-- Include Required Prerequisites -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
 </head>
 <body>
 
@@ -60,18 +66,21 @@
                         <li>Датчики системы</li>
                     </ul>
                     <div class="graph-top sensors-content">
+                        <table class="settings-table table-head">
+                            <tr class="head">
+                                <th>Имя датчика</th>
+                                <th>Порт датчика</th>
+                                <th>Показания (°С)</th>
+                                <th>Заряд</th>
+                                <th>Статус</th>
+                                <th class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> Все в</label> отчет</th>
+                                <th>Управление</th>
+                                    
+                            </tr>
+                        </table>
                         <div class="sensors-table-wrap">
                             <table class="settings-table">
-                                <tr class="head">
-                                    <th>Имя датчика</th>
-                                    <th>Порт датчика</th>
-                                    <th>Показания (°С)</th>
-                                    <th>Заряд</th>
-                                    <th>Статус</th>
-                                    <th class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> Все в</label> отчет</th>
-                                    <th>Управление</th>
-                                    
-                                </tr>
+                                
                                 <tr>                            
                                     <td>Каб. 112 - Холодильник 1</td>
                                     <td>т1</td>
@@ -345,10 +354,30 @@
                         </div>
                     </div>
 					<div class="graph-wrap sensors-graph dropdown-position-anchor">
-                        <div id="container" style="height: 400px; width: 750px;"></div>
+                        <div class="graph-left">
+                            <div class="date-pick">
+                                <ul>
+                                    <li class="active"><button>За последние</button></li>
+                                    <li><button>1 ч.</button></li>
+                                    <li><button>3 ч.</button></li>
+                                    <li><button>6 ч.</button></li>
+                                    <li><button>1 сут.</button></li>
+                                    <li><button>3 сут.</button></li>
+                                    <li><button>1 нед.</button></li>
+                                    <li><button>1 мес.</button></li>
+                                    <li><button>1 год</button></li>
+                                </ul>
+                                <span> или </span>
+                                <div class="calendar">
+                                    <input type="text" name="daterange" placeholder="Выбрать период">
+                                </div>
+                            </div>
+                            <div id="container" style="height: 400px; width: 750px;"></div>
+                        </div>
                         <div class="graph-select prime-form">
                             <div class="checkbox-row row-1">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 00798746587</option>
                                     <option>Датчик 498746587</option>
                                     <option>Датчик 598746587</option>
@@ -371,7 +400,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-2">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -396,7 +426,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-3">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -421,7 +452,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-4">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -446,7 +478,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-5">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -471,7 +504,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-6">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -496,7 +530,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-7">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -521,13 +556,15 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-8">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                 </select>
                             </div>
                             <div class="checkbox-row row-9">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -552,7 +589,8 @@
                                 </select>
                             </div>
                             <div class="checkbox-row row-10">
-                                <select>
+                                <select placeholder="Выберите датчик">
+                                    <option></option>
                                     <option>Датчик 198746587</option>
                                     <option>Датчик 298746587</option>
                                     <option>Датчик 398746587</option>
@@ -592,7 +630,70 @@
 <script src="js/selectize.min.js"></script>
 <script src="js/jquery.custom-scrollbar.js"></script>
 <script src="js/ion.rangeSlider.min.js"></script>
+
+
+<!-- DATE RANGE PICKER SCRIPTS -->
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+
+
 <script src="js/script.js"></script>
+
+
+<!-- DATE RANGE PICKER INITIALIZE -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[name="daterange"]').daterangepicker({
+            opens: "left",
+            // autoUpdateInput: false,
+            locale: {
+                "format": "DD/MM/YYYY",
+                applyLabel: "Применить",
+                cancelLabel: 'Отменить',
+                "weekLabel": "Нед.",
+                "daysOfWeek": [
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб",
+                    "Вс"
+                ],
+                "monthNames": [
+                    "Январь",
+                    "Февраль",
+                    "Март",
+                    "Апрель",
+                    "Май",
+                    "Июнь",
+                    "Июль",
+                    "Август",
+                    "Сентябрь",
+                    "Октябрь",
+                    "Ноябрь",
+                    "Декабрь"
+                ],
+            },
+            // ranges: {
+            //    'Сегодня': [moment(), moment()],
+            //    '1 день назад': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            //    'За неделю': [moment().subtract(6, 'days'), moment()],
+            //    'За последние 30 дней': [moment().subtract(29, 'days'), moment()],
+            //    'За этот месяц': [moment().startOf('month'), moment().endOf('month')],
+            //    'За прошлый месяц': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            // }
+        });
+        $('input[name="daterange"]').val('');
+    });
+
+</script>
+
+
+
+
 <script type="text/javascript">
 
 	$.getJSON('date.json', function (data) {

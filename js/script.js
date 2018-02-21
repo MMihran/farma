@@ -5,8 +5,15 @@ $(document).ready(function(){
     	var initHandler = function(name) {
     		$(".selectize-input input").prop('disabled', true);
     	};
+    	$(".multiselect select").selectize({
+    		maxItems: 10,
+    		onDropdownOpen: function(a){
+    			console.log("here");
+    		}
+    	});
     	$("select").selectize({
     		maxItems: 1,
+    		// sortField: 'text',
     		onDropdownOpen: function(a){
     			if ($(a).parents(".dropdown-position-anchor").length) {
 	    			var bottomOfContainer = $(a).closest(".dropdown-position-anchor").offset().top + $(a).closest(".dropdown-position-anchor").height();
@@ -122,21 +129,6 @@ $(document).ready(function(){
 
 
 
-	// FIX SCROLLABLE TABLE HEAD
-	var tableHead = $(".sensors-table-wrap .head").clone();
-	tableHead.find("th").each(function(index){
-		// console.log(index);
-		// console.log($(".sensors-table-wrap .head th"));
-		$(this).width($(".sensors-table-wrap .head").children().eq(index).width());
-	});
-	var tableClone = $("<table class='fixed-head'></table>");
-	tableClone.append(tableHead);
-	$(".sensors-table-wrap.scrollable .viewport").append(tableClone);
-	
 
-	$('.fixed-head .checkbox-row input[type=checkbox]').change(function () {
-	   	$(".settings-table th.checkbox-row input[type=checkbox]").trigger("change");
-	   	$(this).prop("checked", $(".settings-table th.checkbox-row input[type=checkbox]").prop("checked"));
-	});
 });
 
