@@ -52,8 +52,10 @@ $(document).ready(function(){
 
 
 
-	$("[data-toggle=modal]").click(function () {
+	$("[data-toggle=modal]").click(function (e) {
+		e.preventDefault();
 		var modal = $(this).attr("data-target");
+		$('.modal').hide();
 		$(modal).fadeIn();
 
 		$(modal).find(".cancel").click(function(){
@@ -124,6 +126,7 @@ $(document).ready(function(){
 		    }
 		});
 	}catch(e){}
+
 
 
 

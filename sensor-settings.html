@@ -10,7 +10,7 @@
 	<header class="header">
 		<div class="container">
 			<div class="breadcrumb">
-				<span class="logo"><a href="#">EctoControl</a></span>
+				<span class="logo"><a href="#">«Технологии холодовой цепи»</a></span>
 				<span class="place">Личный кабинет</span>
 			</div>
 			<form>
@@ -21,7 +21,8 @@
 					<p class="user-name">Вячеслав Трощин</p>
 					<p class="user-status">Супер-администратор</p>
 				</div>
-				<span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+                <span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+				<span class="user-logout"><a href="#"><img src="img/logout.png" alt="" title="Выход" data-toggle="modal" data-target="#logoutModal"></a></span>
 			</div>
 		</div>
 	</header>
@@ -156,7 +157,21 @@
 	</section>
 
 
-	
+	<div id="logoutModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p class="head">Выход из системы</p>
+        <div class="content">
+            <p><span class="user">Вячеслав Трощин</span> вы хотите покинуть сервис?</p>
+            <div class="btns">
+                <button class="approve">Да</button>
+                <button class="cancel">Нет</button>
+            </div>
+        </div>
+      </div>
+
+    </div>
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/jquery.matchHeight-min.js"></script>

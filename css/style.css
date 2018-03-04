@@ -560,11 +560,12 @@ table {
 .highcharts-background {
   fill: #3E4464;
 }
-.highcharts-grid-line {
-  display: none;
+.highcharts-area {
+  fill-opacity: 0.25;
 }
 .area-graph .highcharts-graph {
   stroke: #8C9EFF;
+  z-index: 5;
 }
 .highcharts-axis-labels text {
   color: #fff !important;
@@ -911,14 +912,16 @@ h2 {
   margin-right: 10px;
   text-align: right;
 }
-.header .user-config {
+.header .user-config,
+.header .user-logout {
   display: inline-block;
   line-height: 40px;
   vertical-align: middle;
 }
-.header .user-config a {
+.header .user-config a,
+.header .user-logout a {
   display: inline-block;
-  padding: 10px;
+  padding: 10px 5px;
 }
 .header .user-status {
   color: #939db1;
@@ -935,12 +938,14 @@ h2 {
   vertical-align: top;
 }
 .breadcrumb .logo {
-  padding-left: 80px;
+  padding-right: 30px;
+  padding-left: 20px;
   display: inline-block;
   font-weight: 500;
   font-size: 20px;
   vertical-align: top;
-  width: 225px;
+  min-width: 225px;
+  text-align: right;
   position: relative;
 }
 .breadcrumb .logo a {
@@ -954,13 +959,13 @@ h2 {
   display: inline-block;
   line-height: 60px;
   position: absolute;
-  right: 0;
+  right: 0px;
   top: 0;
   bottom: 0;
   margin: auto;
 }
 .breadcrumb .place {
-  width: 265px;
+  min-width: 200px;
   display: inline-block;
   font-size: 18px;
   font-weight: 500;
@@ -1486,6 +1491,12 @@ h2 {
 .dashboard-wrapper .btns .pull-right {
   margin-right: 0;
 }
+.dashboard-wrapper .btns:after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
 .dashboard-wrapper .items-wrap {
   margin-left: -10px;
   margin-right: -10px;
@@ -1496,17 +1507,24 @@ h2 {
   clear: both;
   width: 100%;
 }
-.dashboard-head.row-head span:after {
-  content: ", ";
-}
-.dashboard-head.row-head .system-id {
+.row-head.dashboard-head .system-id {
   color: #5973ff;
   font-weight: bold;
 }
-.dashboard-head.row-head .system-condition:after {
+.row-head.sensors-head {
+  margin-bottom: 12px;
+}
+.row-head.sensors-head .system-name {
+  color: #5973ff;
+  font-weight: bold;
+}
+.row-head span:after {
+  content: ", ";
+}
+.row-head .system-condition:after {
   content: "";
 }
-.dashboard-head.row-head .system-condition:before {
+.row-head .system-condition:before {
   content: "";
   display: inline-block;
   width: 6px;
@@ -1517,16 +1535,16 @@ h2 {
   margin-top: 5px;
   vertical-align: top;
 }
-.dashboard-head.row-head .system-condition.online {
+.row-head .system-condition.online {
   color: #81c784;
 }
-.dashboard-head.row-head .system-condition.online:before {
+.row-head .system-condition.online:before {
   background-color: #81c784;
 }
-.dashboard-head.row-head .system-condition.offline {
+.row-head .system-condition.offline {
   color: #f44336;
 }
-.dashboard-head.row-head .system-condition.offline:before {
+.row-head .system-condition.offline:before {
   background-color: #f44336;
 }
 .dashboard-row {
@@ -2058,6 +2076,10 @@ h2 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.graph-top .sensors-table-wrap .temp-column.gray,
+.graph-top .sensors-table-wrap .status-column.gray {
+  color: #bbb;
+}
 .graph-top .sensors-table-wrap table {
   box-shadow: none;
   max-width: 980px;
@@ -2167,7 +2189,7 @@ h2 {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 500;
   /* Sit on top */
   left: 0;
   top: 0;
@@ -2190,10 +2212,17 @@ h2 {
   padding: 0;
   border-radius: 5px;
   overflow: hidden;
+  width: 470px;
 }
 #confirmModal .modal-content {
   width: 470px;
   padding: 0;
+}
+#logoutModal p .user {
+  display: inline;
+}
+#logoutModal p .user:after {
+  content: ", ";
 }
 .modal .head {
   height: 60px;
@@ -2286,14 +2315,15 @@ h2 {
 .date-pick li + li {
   margin-left: 5px;
 }
-.date-pick li.active button {
+.date-pick li.active button,
+.date-pick li:first-child button {
   font-weight: 500;
-  color: #999;
+  color: #fff;
 }
 .date-pick li button {
   background: none;
   border: none;
-  color: #fff;
+  color: #999;
   line-height: 50px;
 }
 .date-pick span {
@@ -2310,6 +2340,7 @@ h2 {
   background: none;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 .sensors-graph {
   overflow: hidden;
@@ -2404,34 +2435,34 @@ h2 {
   color: #333;
 }
 .sensors-graph .checkbox-row.row-1 .selectize-input {
-  background-color: #FEFF99;
+  background-color: #FF6600;
 }
 .sensors-graph .checkbox-row.row-2 .selectize-input {
-  background-color: #FFCC00;
+  background-color: #FF9933;
 }
 .sensors-graph .checkbox-row.row-3 .selectize-input {
-  background-color: #FE0000;
+  background-color: #FFFF00;
 }
 .sensors-graph .checkbox-row.row-4 .selectize-input {
-  background-color: #FF00FE;
+  background-color: #99CC00;
 }
 .sensors-graph .checkbox-row.row-5 .selectize-input {
-  background-color: #00FFFF;
+  background-color: #99FF66;
 }
 .sensors-graph .checkbox-row.row-6 .selectize-input {
-  background-color: #CDFFCC;
+  background-color: #66FFCC;
 }
 .sensors-graph .checkbox-row.row-7 .selectize-input {
-  background-color: #00FF01;
+  background-color: #33CCFF;
 }
 .sensors-graph .checkbox-row.row-8 .selectize-input {
-  background-color: #7F8000;
+  background-color: #CC99FF;
 }
 .sensors-graph .checkbox-row.row-9 .selectize-input {
-  background-color: #969696;
+  background-color: #CC0099;
 }
 .sensors-graph .checkbox-row.row-10 .selectize-input {
-  background-color: #800000;
+  background-color: #996633;
 }
 .daterangepicker {
   display: none;

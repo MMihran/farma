@@ -17,7 +17,7 @@
 	<header class="header">
 		<div class="container">
 			<div class="breadcrumb">
-				<span class="logo"><a href="#">EctoControl</a></span>
+				<span class="logo"><a href="#">«Технологии холодовой цепи»</a></span>
 				<span class="place">Личный кабинет</span>
 			</div>
 			<form>
@@ -28,7 +28,8 @@
 					<p class="user-name">Вячеслав Трощин</p>
 					<p class="user-status">Супер-администратор</p>
 				</div>
-				<span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+                <span class="user-config"><a href="#"><img src="img/config-ico.png" alt=""></a></span>
+				<span class="user-logout"><a href="#"><img src="img/logout.png" alt="" title="Выход" data-toggle="modal" data-target="#logoutModal"></a></span>
 			</div>
 		</div>
 	</header>
@@ -65,6 +66,10 @@
                     <ul class="content-breadcrumb">
                         <li>Датчики системы</li>
                     </ul>
+                    <p class="row-head sensors-head">
+                        <span class="system-name">Имя системы</span>
+                        <span class="system-condition online">В сети</span>
+                    </p>
                     <div class="graph-top sensors-content">
                         <table class="settings-table table-head">
                             <tr class="head">
@@ -84,9 +89,9 @@
                                 <tr>                            
                                     <td>Каб. 112 - Холодильник 1</td>
                                     <td>т1</td>
-                                    <td>17</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column gray">17</td>
+                                    <td class="charge-column"><img src="img/charge-1.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -96,9 +101,9 @@
                                 <tr>                            
                                     <td>Сухой склад - приёмка</td>
                                     <td>т2</td>
-                                    <td>- 5</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column gray">- 5</td>
+                                    <td class="charge-column"><img src="img/charge-4.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -108,9 +113,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к1</td>
                                     <td>т3</td>
-                                    <td>21</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column gray">21</td>
+                                    <td class="charge-column"><img src="img/charge-2.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -120,9 +125,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т1</td>
-                                    <td>19</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column gray">19</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column gray">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -132,9 +137,9 @@
                                 <tr>                            
                                     <td>Каб. 112 - Холодильник 1</td>
                                     <td>т1</td>
-                                    <td>25</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">25</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column gray">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -144,9 +149,9 @@
                                 <tr>                            
                                     <td>Сухой склад - приёмка</td>
                                     <td>т6</td>
-                                    <td>20</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">20</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column gray">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -156,9 +161,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к1</td>
                                     <td>т3</td>
-                                    <td>24</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">24</td>
+                                    <td class="charge-column"><img src="img/charge-0.png" alt=""></td>
+                                    <td class="status-column gray">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -168,9 +173,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т2</td>
-                                    <td>21</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">21</td>
+                                    <td class="charge-column"><img src="img/charge-4.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -180,9 +185,9 @@
                                 <tr>                            
                                     <td>Каб. 112 - Холодильник 1</td>
                                     <td>т2</td>
-                                    <td>0</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">0</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -192,9 +197,9 @@
                                 <tr>                            
                                     <td>Сухой склад - приёмка</td>
                                     <td>т1</td>
-                                    <td>35</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">35</td>
+                                    <td class="charge-column"><img src="img/charge-1.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -204,9 +209,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к1</td>
                                     <td>т1</td>
-                                    <td>13</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">13</td>
+                                    <td class="charge-column"><img src="img/charge-1.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -216,9 +221,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т3</td>
-                                    <td>7</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">7</td>
+                                    <td class="charge-column"><img src="img/charge-2.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -228,9 +233,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т3</td>
-                                    <td>7</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">7</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -240,9 +245,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т3</td>
-                                    <td>7</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">7</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -252,9 +257,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т3</td>
-                                    <td>7</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">7</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -264,9 +269,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т3</td>
-                                    <td>7</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">7</td>
+                                    <td class="charge-column"><img src="img/charge-0.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -276,9 +281,9 @@
                                 <tr>                            
                                     <td>Сухой склад - приёмка</td>
                                     <td>т6</td>
-                                    <td>20</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">20</td>
+                                    <td class="charge-column"><img src="img/charge-4.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -288,9 +293,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к1</td>
                                     <td>т3</td>
-                                    <td>24</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">24</td>
+                                    <td class="charge-column"><img src="img/charge-4.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -300,9 +305,9 @@
                                 <tr>                            
                                     <td>Камера хранения - к2</td>
                                     <td>т2</td>
-                                    <td>21</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">21</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -312,9 +317,9 @@
                                 <tr>                            
                                     <td>Каб. 112 - Холодильник 1</td>
                                     <td>т2</td>
-                                    <td>0</td>
-                                    <td></td>
-                                    <td>На связи</td>
+                                    <td class="temp-column">0</td>
+                                    <td class="charge-column"><img src="img/charge-3.png" alt=""></td>
+                                    <td class="status-column">На связи</td>
                                     <td class="checkbox-row"><label><input type="checkbox" name=""><span class="chk-wrap"></span> В отчет</label></td>
                                     <td class="img-row-2">
                                         <a href="#" class="img-btn"><img src="img/table-2.png" alt=""></a>
@@ -357,9 +362,9 @@
                         <div class="graph-left">
                             <div class="date-pick">
                                 <ul>
-                                    <li class="active"><button>За последние</button></li>
+                                    <li><button>За последние</button></li>
                                     <li><button>1 ч.</button></li>
-                                    <li><button>3 ч.</button></li>
+                                    <li class="active"><button>3 ч.</button></li>
                                     <li><button>6 ч.</button></li>
                                     <li><button>1 сут.</button></li>
                                     <li><button>3 сут.</button></li>
@@ -623,6 +628,21 @@
 	</section>
 
 
+    <div id="logoutModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p class="head">Выход из системы</p>
+        <div class="content">
+            <p><span class="user">Вячеслав Трощин</span> вы хотите покинуть сервис?</p>
+            <div class="btns">
+                <button class="approve">Да</button>
+                <button class="cancel">Нет</button>
+            </div>
+        </div>
+      </div>
+
+    </div>
 	
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://code.highcharts.com/stock/highstock.js"></script>
@@ -730,7 +750,12 @@
         xAxis: {
             type: 'datetime',
             // tickInterval: 850000000,
-            tickLength: 5
+            tickLength: 5,
+            gridLineWidth: 1,
+            gridLineColor: '#4b5279',
+            lineColor: '#4b5279',
+            tickColor: '#4b5279'
+
         },
         scrollbar: {
             enabled: false
@@ -738,6 +763,7 @@
         navigator: {
             enabled: false
         },
+
         tooltip: {
             formatter: function() {
                 return "<span>" + ((this.y*10).toFixed())/10 + '\u00B0C' + "</span>";
@@ -833,9 +859,9 @@
 	                    y2: 1
 	                },
                     stops: [
-	                    [1, "#393F61"],
-	                    [0, "#4F5575"]
-	                ]
+	                    [1, "#262a41"],
+	                    [0, "#3a3f57"]
+	                ],
                 },
                 marker: {
                     radius: 2
@@ -846,12 +872,15 @@
                         lineWidth: 3
                     }
                 },
-                threshold: null
+                threshold: null,
             },
+            
         },
         yAxis: {
         	min: -40,
         	max: 40,
+            gridLineWidth: 1,
+            gridLineColor: '#4b5279',
         	title: {
         		text: null
         	},
